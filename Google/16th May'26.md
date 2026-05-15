@@ -9,7 +9,7 @@
 ```
 <br>
 
-### Prompt 1.2 — Scaffold the project structure
+### Prompt 1.2 — Building the project structure
 ```text
 Create a complete project scaffold for a GitHub Dev Card Generator with this folder structure:
 
