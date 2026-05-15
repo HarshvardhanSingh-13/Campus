@@ -1,15 +1,15 @@
-## This file contains the prompts used to build the Project
+# GitHub Dev Card Generator: Prompt Guide
 
 
-### Phase 1 — Project setup
+## Phase 1 — Project setup
 
-#### Prompt 1.1 — Set the working context 
+### Prompt 1.1 — Set the working context 
 ```text
 /"You are an expert Python developer building a GitHub Dev Card Generator. The stack is: Google ADK for agent orchestration, MCP (FastMCP) for tools, Gemini 2.5 Flash as the LLM, FastAPI as the backend, and React/HTML as the frontend. Everything deploys to Google Cloud Run. Write clean, modular Python. Prefer uv for dependency management."
 ```
 <br>
 
-### Prompt 2 — Scaffold the project structure
+### Prompt 1.2 — Scaffold the project structure
 ```text
 Create a complete project scaffold for a GitHub Dev Card Generator with this folder structure:
 
@@ -33,9 +33,9 @@ Create all files with the correct boilerplate — empty functions are fine, just
 ---
 <br>
 
-### Phase 2 — MCP Server (the tools)
+## Phase 2 — MCP Server (the tools)
 
-#### Prompt 2.1 — Build the MCP server with all 4 tools
+### Prompt 2.1 — Build the MCP server with all 4 tools
 
 ```text
 In backend/mcp_server.py, implement a FastMCP server with exactly these 4 tools:
@@ -73,9 +73,9 @@ Tell me if any tool fails and what the error is.
 
 <br>
 
-### Phase 3 — ADK Agent
+## Phase 3 — ADK Agent
 
-#### Prompt 3.1 — Build the ADK agent
+### Prompt 3.1 — Build the ADK agent
 
 ```text
 In backend/agent.py, create an ADK Agent called "github_card_agent" using Gemini 2.5 Flash.
@@ -110,10 +110,9 @@ Run with: uvicorn main:app --host 0.0.0.0 --port 8080
 
 ---
 
-### Phase 4 — Frontend 
+## Phase 4 — Frontend 
 
-
-#### Prompt 4.1 — Vibe-code the full frontend
+### Prompt 4.1 — Vibe-code the full frontend
 ```text
 Create frontend/index.html as a single self-contained file (no build step, no npm) with this UI:
 
@@ -132,9 +131,9 @@ The frontend calls POST http://localhost:8080/generate with {"username": "..."} 
 ---
 <br>
 
-### Phase 5 — Dockerize & Deploy
+## Phase 5 — Dockerize & Deploy
 
-#### Prompt 5.1 — Write the Dockerfiles
+### Prompt 5.1 — Write the Dockerfiles
 
 ```text
 Write Dockerfiles for both services:
@@ -157,7 +156,7 @@ Also write `docker-compose.yml` that wires both containers together for local te
 ```
 <br>
 
-#### Prompt 5.2 — Deploy via AntiGravity MCP 
+### Prompt 5.2 — Deploy via AntiGravity MCP 
 
 ```text
 Deploy two Cloud Run services to Google Cloud for my GitHub Dev Card Generator project:
@@ -184,7 +183,7 @@ Deploy backend first, get its URL, then deploy frontend with that URL as `BACKEN
 ```
 <br>
 
-#### 5.3 — Verify the deployment
+### 5.3 — Verify the deployment
 
 ```text
 Check the health of both my Cloud Run services:
