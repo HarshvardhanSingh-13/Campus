@@ -31,3 +31,41 @@ github-card-generator/
 Create all files with the correct boilerplate — empty functions are fine, just get the imports and structure right. Use `uv` for Python deps.
 ```
 ---
+
+
+### Phase 2 — MCP Server (the tools)
+
+#### Prompt 2.1 — Build the MCP server with all 4 tools
+
+```text
+In backend/mcp_server.py, implement a FastMCP server with exactly these 4 tools:
+
+1. scrape_github(username: str) -> dict
+   - Calls the GitHub REST API (no auth needed for public profiles)
+   - Returns: name, bio, location, public_repos, followers, top 6 repos (name, stars, language, description), most used languages aggregated
+2. analyze_profile(github_data: dict) -> dict
+   - Calls Gemini 2.5 Flash with the github_data
+   - Returns a JSON with: developer_vibe (1 sentence personality), top_skills (list of 3), fun_fact (something clever inferred from their repos), card_theme (one of: "hacker", "builder", "researcher", "designer", "open-source-hero")
+3. generate_card_html(username: str, github_data: dict, analysis: dict) -> str
+   - Generates a self-contained HTML string for a beautiful dev card
+   - Card shows: avatar, name, vibe sentence, top skills as badges, repo count, followers, top 3 repos, card_theme styling (dark for hacker, light for builder, etc.)
+4. save_card(username: str, html: str) -> str
+   - Saves the HTML to static/cards/{username}.html
+   - Returns the relative URL path
+
+Run the server with: uv run python mcp_server.py
+```
+
+
+### Prompt 4 — Test the MCP server in isolation with Gemini CLI
+Connect to my local MCP server and test it end to end. Run these steps in sequence:
+
+1. Call scrape_github with username "torvalds"
+2. Pass that result into analyze_profile
+3. Generate an HTML card from the results using generate_card_html
+4. Print the card_theme and developer_vibe from the analysis
+
+Tell me if any tool fails and what the error is.
+
+---
+
