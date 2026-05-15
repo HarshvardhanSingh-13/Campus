@@ -7,7 +7,7 @@
 ```text
 /"You are an expert Python developer building a GitHub Dev Card Generator. The stack is: Google ADK for agent orchestration, MCP (FastMCP) for tools, Gemini 2.5 Flash as the LLM, FastAPI as the backend, and React/HTML as the frontend. Everything deploys to Google Cloud Run. Write clean, modular Python. Prefer uv for dependency management."
 ```
----
+
 
 ### Prompt 2 — Scaffold the project structure
 ```text
@@ -57,7 +57,9 @@ Run the server with: uv run python mcp_server.py
 ```
 
 
-### Prompt 4 — Test the MCP server in isolation with Gemini CLI
+### Prompt 2.2 — Test the MCP server in isolation with Gemini CLI
+
+```text
 Connect to my local MCP server and test it end to end. Run these steps in sequence:
 
 1. Call scrape_github with username "torvalds"
@@ -66,6 +68,7 @@ Connect to my local MCP server and test it end to end. Run these steps in sequen
 4. Print the card_theme and developer_vibe from the analysis
 
 Tell me if any tool fails and what the error is.
-
+```
 ---
+
 
