@@ -72,6 +72,7 @@ Tell me if any tool fails and what the error is.
 ---
 
 <br>
+
 ### Phase 3 — ADK Agent
 
 #### Prompt 3.1 — Build the ADK agent
@@ -86,6 +87,7 @@ System instruction for the agent:
 Export the agent as: github_card_agent
 ```
 <br>
+
 ### Prompt 3.2 — Wire up the FastAPI backend
 
 ```text
@@ -129,6 +131,7 @@ The frontend calls POST http://localhost:8080/generate with {"username": "..."} 
 ```
 ---
 <br>
+
 ### Phase 5 — Dockerize & Deploy
 
 #### Prompt 5.1 — Write the Dockerfiles
@@ -153,6 +156,7 @@ Write Dockerfiles for both services:
 Also write `docker-compose.yml` that wires both containers together for local testing.
 ```
 <br>
+
 #### Prompt 5.2 — Deploy via AntiGravity MCP 
 
 ```text
@@ -179,6 +183,7 @@ Deploy two Cloud Run services to Google Cloud for my GitHub Dev Card Generator p
 Deploy backend first, get its URL, then deploy frontend with that URL as `BACKEND_URL`. Return both public URLs when done.
 ```
 <br>
+
 #### 5.3 — Verify the deployment
 
 ```text
@@ -190,9 +195,9 @@ If the backend health check fails, show me the Cloud Run logs for `github-card-b
 If the frontend loads but can't reach the backend, check CORS headers on the backend response.
 ```
 ---
-<br>
-## Optional: Add Memory Bank (bonus factor)
 
+## Optional: Add Memory Bank (bonus factor)
+<br>
 
 ### Prompt — Hook up Vertex AI Memory Bank
 
