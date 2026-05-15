@@ -7,7 +7,7 @@
 ```text
 /"You are an expert Python developer building a GitHub Dev Card Generator. The stack is: Google ADK for agent orchestration, MCP (FastMCP) for tools, Gemini 2.5 Flash as the LLM, FastAPI as the backend, and React/HTML as the frontend. Everything deploys to Google Cloud Run. Write clean, modular Python. Prefer uv for dependency management."
 ```
-
+<br>
 
 ### Prompt 2 — Scaffold the project structure
 ```text
@@ -31,7 +31,7 @@ github-card-generator/
 Create all files with the correct boilerplate — empty functions are fine, just get the imports and structure right. Use `uv` for Python deps.
 ```
 ---
-
+<br>
 
 ### Phase 2 — MCP Server (the tools)
 
@@ -55,7 +55,7 @@ In backend/mcp_server.py, implement a FastMCP server with exactly these 4 tools:
 
 Run the server with: uv run python mcp_server.py
 ```
-
+<br>
 
 ### Prompt 2.2 — Test the MCP server in isolation with Gemini CLI
 
@@ -71,7 +71,7 @@ Tell me if any tool fails and what the error is.
 ```
 ---
 
-
+<br>
 ### Phase 3 — ADK Agent
 
 #### Prompt 3.1 — Build the ADK agent
@@ -85,7 +85,7 @@ System instruction for the agent:
 
 Export the agent as: github_card_agent
 ```
-
+<br>
 ### Prompt 3.2 — Wire up the FastAPI backend
 
 ```text
@@ -108,7 +108,6 @@ Run with: uvicorn main:app --host 0.0.0.0 --port 8080
 
 ---
 
-
 ### Phase 4 — Frontend 
 
 
@@ -129,7 +128,7 @@ Create frontend/index.html as a single self-contained file (no build step, no np
 The frontend calls POST http://localhost:8080/generate with {"username": "..."} and displays the response. Make it look genuinely polished — not default HTML. Use Inter font from Google Fonts. Animate the button on hover. The card should appear with a fade-in.
 ```
 ---
-
+<br>
 ### Phase 5 — Dockerize & Deploy
 
 #### Prompt 5.1 — Write the Dockerfiles
@@ -153,7 +152,7 @@ Write Dockerfiles for both services:
 
 Also write `docker-compose.yml` that wires both containers together for local testing.
 ```
-
+<br>
 #### Prompt 5.2 — Deploy via AntiGravity MCP 
 
 ```text
@@ -179,7 +178,7 @@ Deploy two Cloud Run services to Google Cloud for my GitHub Dev Card Generator p
 
 Deploy backend first, get its URL, then deploy frontend with that URL as `BACKEND_URL`. Return both public URLs when done.
 ```
-
+<br>
 #### 5.3 — Verify the deployment
 
 ```text
@@ -191,7 +190,7 @@ If the backend health check fails, show me the Cloud Run logs for `github-card-b
 If the frontend loads but can't reach the backend, check CORS headers on the backend response.
 ```
 ---
-
+<br>
 ## Optional: Add Memory Bank (bonus factor)
 
 
