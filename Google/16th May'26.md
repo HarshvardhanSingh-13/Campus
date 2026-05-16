@@ -213,3 +213,28 @@ Add a script `backend/deploy_memory.py` that:
 
 This way the agent remembers "last time this user asked for a hacker-theme dark card" across sessions.
 ```
+
+## Commands to run the backend
+
+Cd to the place where the file is
+
+<br>
+
+```text
+.\.venv\Scripts\activate
+```
+
+<br>
+
+```text
+Install dependency
+pip install -r requirements.txt
+```
+
+<br>
+
+```text
+uvicorn main:app --reload --port 8080
+```
+
+
